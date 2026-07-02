@@ -1,0 +1,28 @@
+stages:
+  - build
+  - publish
+
+default:
+  image: node:22-alpine
+
+build:
+  stage: build
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 hour
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+
+publish:
+  stage: publish
+  script:
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+    - npm publish
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+  dependencies:
+    - build
