@@ -92,6 +92,7 @@
     "prettier": "^3.9.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "storybook": "^8.6.18",
     "tailwindcss": "^4.1.10",
     "tsup": "^8.5.1",
     "typescript": "^5.8.3",
