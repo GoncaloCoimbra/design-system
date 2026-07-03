@@ -50,28 +50,28 @@ Tokens set after the import always win. You only need to override what you want 
 
 ### Available tokens
 
-| Token | Default | Description |
-|---|---|---|
-| `--color-background` | `oklch(1 0 0)` | Page background |
-| `--color-foreground` | `oklch(0.145 0 0)` | Default text |
-| `--color-primary` | `oklch(0.205 0 0)` | Primary actions |
-| `--color-primary-foreground` | `oklch(0.985 0 0)` | Text on primary |
-| `--color-secondary` | `oklch(0.97 0 0)` | Secondary actions |
-| `--color-secondary-foreground` | `oklch(0.205 0 0)` | Text on secondary |
-| `--color-muted` | `oklch(0.97 0 0)` | Muted backgrounds |
-| `--color-muted-foreground` | `oklch(0.556 0 0)` | Muted text |
-| `--color-accent` | `oklch(0.97 0 0)` | Accent backgrounds |
-| `--color-accent-foreground` | `oklch(0.205 0 0)` | Text on accent |
-| `--color-destructive` | `oklch(0.577 0.245 27.325)` | Destructive actions |
-| `--color-border` | `oklch(0.922 0 0)` | Borders |
-| `--color-input` | `oklch(0.922 0 0)` | Input borders |
-| `--color-ring` | `oklch(0.708 0 0)` | Focus rings |
-| `--color-card` | `oklch(1 0 0)` | Card background |
-| `--color-popover` | `oklch(1 0 0)` | Popover background |
-| `--radius-sm` | `0.25rem` | Small radius |
-| `--radius-md` | `0.375rem` | Medium radius |
-| `--radius-lg` | `0.5rem` | Large radius |
-| `--radius-xl` | `0.75rem` | Extra large radius |
+| Token                          | Default                     | Description         |
+| ------------------------------ | --------------------------- | ------------------- |
+| `--color-background`           | `oklch(1 0 0)`              | Page background     |
+| `--color-foreground`           | `oklch(0.145 0 0)`          | Default text        |
+| `--color-primary`              | `oklch(0.205 0 0)`          | Primary actions     |
+| `--color-primary-foreground`   | `oklch(0.985 0 0)`          | Text on primary     |
+| `--color-secondary`            | `oklch(0.97 0 0)`           | Secondary actions   |
+| `--color-secondary-foreground` | `oklch(0.205 0 0)`          | Text on secondary   |
+| `--color-muted`                | `oklch(0.97 0 0)`           | Muted backgrounds   |
+| `--color-muted-foreground`     | `oklch(0.556 0 0)`          | Muted text          |
+| `--color-accent`               | `oklch(0.97 0 0)`           | Accent backgrounds  |
+| `--color-accent-foreground`    | `oklch(0.205 0 0)`          | Text on accent      |
+| `--color-destructive`          | `oklch(0.577 0.245 27.325)` | Destructive actions |
+| `--color-border`               | `oklch(0.922 0 0)`          | Borders             |
+| `--color-input`                | `oklch(0.922 0 0)`          | Input borders       |
+| `--color-ring`                 | `oklch(0.708 0 0)`          | Focus rings         |
+| `--color-card`                 | `oklch(1 0 0)`              | Card background     |
+| `--color-popover`              | `oklch(1 0 0)`              | Popover background  |
+| `--radius-sm`                  | `0.25rem`                   | Small radius        |
+| `--radius-md`                  | `0.375rem`                  | Medium radius       |
+| `--radius-lg`                  | `0.5rem`                    | Large radius        |
+| `--radius-xl`                  | `0.75rem`                   | Extra large radius  |
 
 ## Components
 
@@ -81,11 +81,11 @@ Tokens set after the import always win. You only need to override what you want 
 import { Button, type ButtonProps } from "@commitpt/design-system";
 ```
 
-| Prop | Type | Default |
-|---|---|---|
+| Prop      | Type                                                                        | Default   |
+| --------- | --------------------------------------------------------------------------- | --------- |
 | `variant` | `default` \| `destructive` \| `outline` \| `secondary` \| `ghost` \| `link` | `default` |
-| `size` | `default` \| `sm` \| `lg` \| `icon` | `default` |
-| `asChild` | `boolean` | `false` |
+| `size`    | `default` \| `sm` \| `lg` \| `icon`                                         | `default` |
+| `asChild` | `boolean`                                                                   | `false`   |
 
 All standard `<button>` HTML attributes are also accepted.
 
@@ -130,6 +130,76 @@ npm run build-storybook  # static Storybook build
 2. Add all three exports to `src/index.ts`
 3. Create `src/components/ui/<name>.stories.tsx` with stories for every variant
 
-### Publishing
+### Releasing a new version
 
-Merging to `dev` automatically triggers a GitLab CI pipeline that builds and publishes to npm. No manual publish step is needed.
+This project uses [Changesets](https://github.com/changesets/changesets) to manage versioning and changelogs.
+
+#### Step 1 — Record what changed
+
+Run this after making your changes (before or after committing):
+
+```bash
+npm run changeset
+```
+
+The interactive prompt will ask you to:
+
+- Select the bump type: `patch` (bug fix), `minor` (new feature), or `major` (breaking change)
+- Write a short summary of what changed
+
+This creates a file in `.changeset/` — commit it alongside your code.
+
+| Bump type | When to use               | Example         |
+| --------- | ------------------------- | --------------- |
+| `patch`   | Bug fixes, style tweaks   | `0.1.0 → 0.1.1` |
+| `minor`   | New components, new props | `0.1.0 → 0.2.0` |
+| `major`   | Breaking API changes      | `0.1.0 → 1.0.0` |
+
+#### Step 2 — Apply the version bump
+
+When you're ready to release, apply all pending changesets:
+
+```bash
+npm run version
+```
+
+This will:
+
+- Bump the version in `package.json`
+- Generate / update `CHANGELOG.md`
+- Delete the consumed changeset files
+
+Commit the result: `git commit -am "chore: release vX.Y.Z"`
+
+#### Step 3 — Publish to npm
+
+```bash
+npm run release
+```
+
+This builds the library and publishes it to npm under the `@commitpt` scope. You must be logged in (`npm login`) and have publish access to the `@commitpt` org.
+
+#### Full example
+
+```bash
+# 1. Make your changes, then record them
+npm run changeset
+
+# 2. Commit the changeset file
+git add .changeset/
+git commit -m "chore: add changeset"
+
+# 3. Apply version bump + update changelog
+npm run version
+git commit -am "chore: release v0.2.0"
+
+# 4. Publish
+npm run release
+
+# 5. Push + tag
+git push && git push --tags
+```
+
+#### Automated publishing (CI)
+
+Merging to `dev` triggers a GitLab CI pipeline that builds and publishes automatically, provided the `NPM_TOKEN` variable is set in **GitLab → Settings → CI/CD → Variables**.
