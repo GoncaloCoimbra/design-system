@@ -1,45 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  /* Colors */
-  --color-background: oklch(1 0 0);
-  --color-foreground: oklch(0.145 0 0);
+  /* ── Background scale ─────────────────────────────────────────── */
+  --color-background: oklch(0.136 0.022 254); /* #0A0F1A */
+  --color-surface: oklch(0.184 0.025 254); /* #111827 */
+  --color-elevated: oklch(0.247 0.033 254); /* #1D293D */
 
-  --color-primary: oklch(0.205 0 0);
-  --color-primary-foreground: oklch(0.985 0 0);
+  /* ── Foreground ───────────────────────────────────────────────── */
+  --color-foreground: oklch(0.983 0.004 247); /* #F8FAFC */
+  --color-muted-foreground: oklch(0.679 0.024 247); /* #94A3B8 */
 
-  --color-secondary: oklch(0.97 0 0);
-  --color-secondary-foreground: oklch(0.205 0 0);
+  /* ── Primary (blue) ──────────────────────────────────────────── */
+  --color-primary-900: oklch(0.216 0.045 256.2); /* #0b1a2e */
+  --color-primary-800: oklch(0.251 0.058 256.5); /* #0e223d */
+  --color-primary-700: oklch(0.311 0.084 256.5); /* #10305a */
+  --color-primary-600: oklch(0.468 0.184 261.6); /* #1550bf */
+  --color-primary-500: oklch(0.703 0.168 244.6); /* #1ea7ff */
+  --color-primary-400: oklch(0.746 0.143 242.6); /* #4db6ff */
+  --color-primary-300: oklch(0.801 0.111 241.2); /* #79c7ff */
+  --color-primary-200: oklch(0.801 0.111 241.2); /* #79c7ff */
+  --color-primary-100: oklch(0.863 0.074 241.5); /* #a7d9ff */
 
-  --color-muted: oklch(0.97 0 0);
-  --color-muted-foreground: oklch(0.556 0 0);
+  --color-primary: var(--color-primary-500);
+  --color-primary-hover: var(--color-primary-400);
+  --color-primary-pressed: var(--color-primary-600);
+  --color-primary-foreground: oklch(0.983 0.004 247); /* #F8FAFC */
 
-  --color-accent: oklch(0.97 0 0);
-  --color-accent-foreground: oklch(0.205 0 0);
+  /* ── Secondary (purple) ──────────────────────────────────────── */
+  --color-secondary-900: oklch(0.195 0.067 299.9); /* #1a0b2e */
+  --color-secondary-800: oklch(0.247 0.105 292.8); /* #25104d */
+  --color-secondary-700: oklch(0.301 0.14 294.6); /* #36126b */
+  --color-secondary-600: oklch(0.406 0.191 294.5); /* #5520a3 */
+  --color-secondary-500: oklch(0.541 0.247 293); /* #7c3aed */
+  --color-secondary-400: oklch(0.635 0.204 296.7); /* #9a67f5 */
+  --color-secondary-300: oklch(0.673 0.209 305.7); /* #b66bfa */
+  --color-secondary-200: oklch(0.818 0.105 303); /* #d1b3fc */
+  --color-secondary-100: oklch(0.908 0.052 302.6); /* #e7d9fe */
 
-  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-secondary: var(--color-secondary-500);
+  --color-secondary-foreground: oklch(0.983 0.004 247);
 
-  --color-border: oklch(0.922 0 0);
-  --color-input: oklch(0.922 0 0);
-  --color-ring: oklch(0.708 0 0);
+  /* ── Accent (alias → secondary) ──────────────────────────────── */
+  --color-accent: var(--color-secondary-500);
+  --color-accent-foreground: oklch(0.983 0.004 247);
 
-  --color-card: oklch(1 0 0);
-  --color-card-foreground: oklch(0.145 0 0);
+  /* ── Muted ────────────────────────────────────────────────────── */
+  --color-muted: oklch(0.214 0.029 254); /* #161F2E */
 
-  --color-popover: oklch(1 0 0);
-  --color-popover-foreground: oklch(0.145 0 0);
+  /* ── Semantic ─────────────────────────────────────────────────── */
+  --color-success: oklch(0.723 0.19 146); /* #22C55E */
+  --color-warning: oklch(0.771 0.162 79); /* #F59E0B */
+  --color-destructive: oklch(0.637 0.237 25); /* #EF4444 */
 
-  /* Radius */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
+  /* ── Card & Popover ───────────────────────────────────────────── */
+  --color-card: oklch(0.214 0.029 254); /* #161F2E */
+  --color-card-foreground: oklch(0.983 0.004 247);
+  --color-popover: oklch(0.214 0.029 254);
+  --color-popover-foreground: oklch(0.983 0.004 247);
 
-  /* Typography */
-  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+  /* ── Border, Input, Ring ──────────────────────────────────────── */
+  --color-border: oklch(0.307 0.03 254); /* #2B3648 */
+  --color-input: oklch(0.184 0.025 254); /* #111827 — slightly off card */
+  --color-ring: var(--color-primary-500);
+
+  /* ── Radius ───────────────────────────────────────────────────── */
+  --radius-sm: 0.375rem; /* 6px  */
+  --radius-md: 0.625rem; /* 10px */
+  --radius-lg: 0.875rem; /* 14px */
+  --radius-xl: 1rem; /* 16px */
+
+  /* ── Typography ───────────────────────────────────────────────── */
+  --font-sans:
+    "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --font-mono:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 }
 
 @layer base {
@@ -48,6 +93,17 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family: var(--font-mono);
   }
 }

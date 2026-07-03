@@ -20,6 +20,6 @@ describe("Separator", () => {
 
   it("vertical orientation applies vertical class", () => {
     const { container } = render(<Separator orientation="vertical" />);
-    expect(container.firstChild).toHaveClass("w-[1px]");
+    expect(container.firstChild).toHaveClass("w-px");
   });
 });

@@ -7,19 +7,19 @@ describe("Badge", () => {
     expect(screen.getByText("New")).toBeInTheDocument();
   });
 
-  it("default variant has primary background class", () => {
+  it("default variant has primary tinted background class", () => {
     render(<Badge>Default</Badge>);
-    expect(screen.getByText("Default")).toHaveClass("bg-primary");
+    expect(screen.getByText("Default")).toHaveClass("text-primary");
   });
 
-  it("secondary variant has secondary background class", () => {
+  it("secondary variant has elevated background class", () => {
     render(<Badge variant="secondary">Secondary</Badge>);
-    expect(screen.getByText("Secondary")).toHaveClass("bg-secondary");
+    expect(screen.getByText("Secondary")).toHaveClass("bg-elevated");
   });
 
-  it("destructive variant has destructive background class", () => {
+  it("destructive variant has destructive text class", () => {
     render(<Badge variant="destructive">Destructive</Badge>);
-    expect(screen.getByText("Destructive")).toHaveClass("bg-destructive");
+    expect(screen.getByText("Destructive")).toHaveClass("text-destructive");
   });
 
   it("outline variant has foreground text class", () => {

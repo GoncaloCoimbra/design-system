@@ -7,5 +7,6 @@ addons.setConfig({
     brandTitle: "CommitPT",
     brandUrl: "https://commitpt.com",
     brandTarget: "_blank",
+    brandImage: "/brand.svg",
   }),
 });
