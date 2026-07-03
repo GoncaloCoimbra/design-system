@@ -5,7 +5,6 @@ addons.setConfig({
   theme: create({
     base: "dark",
     brandTitle: "CommitPT",
-    brandImage: "./commit_icon.png",
     brandUrl: "https://commitpt.com",
     brandTarget: "_blank",
   }),
