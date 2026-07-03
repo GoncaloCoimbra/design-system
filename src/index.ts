@@ -106,3 +106,6 @@ export type { AlertProps, AlertTitleProps, AlertDescriptionProps } from "./compo
 
 export { Progress } from "./components/ui/progress";
 export type { ProgressProps } from "./components/ui/progress";
+
+export { Typography, typographyVariants } from "./components/ui/typography";
+export type { TypographyProps } from "./components/ui/typography";
