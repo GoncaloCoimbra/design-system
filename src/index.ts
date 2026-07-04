@@ -1,17 +1,17 @@
-export { Button, buttonVariants } from "./components/ui/button";
-export type { ButtonProps } from "./components/ui/button";
+export { Button, buttonVariants } from "./components/ui/button/button";
+export type { ButtonProps } from "./components/ui/button/button";
 
-export { Input } from "./components/ui/input";
-export type { InputProps } from "./components/ui/input";
+export { Input } from "./components/ui/input/input";
+export type { InputProps } from "./components/ui/input/input";
 
-export { Label } from "./components/ui/label";
-export type { LabelProps } from "./components/ui/label";
+export { Label } from "./components/ui/label/label";
+export type { LabelProps } from "./components/ui/label/label";
 
-export { Textarea } from "./components/ui/textarea";
-export type { TextareaProps } from "./components/ui/textarea";
+export { Textarea } from "./components/ui/textarea/textarea";
+export type { TextareaProps } from "./components/ui/textarea/textarea";
 
-export { Badge, badgeVariants } from "./components/ui/badge";
-export type { BadgeProps } from "./components/ui/badge";
+export { Badge, badgeVariants } from "./components/ui/badge/badge";
+export type { BadgeProps } from "./components/ui/badge/badge";
 
 export {
   Card,
@@ -20,7 +20,7 @@ export {
   CardTitle,
   CardDescription,
   CardContent,
-} from "./components/ui/card";
+} from "./components/ui/card/card";
 export type {
   CardProps,
   CardHeaderProps,
@@ -28,25 +28,29 @@ export type {
   CardTitleProps,
   CardDescriptionProps,
   CardContentProps,
-} from "./components/ui/card";
+} from "./components/ui/card/card";
 
-export { Separator } from "./components/ui/separator";
-export type { SeparatorProps } from "./components/ui/separator";
+export { Separator } from "./components/ui/separator/separator";
+export type { SeparatorProps } from "./components/ui/separator/separator";
 
-export { Skeleton } from "./components/ui/skeleton";
-export type { SkeletonProps } from "./components/ui/skeleton";
+export { Skeleton } from "./components/ui/skeleton/skeleton";
+export type { SkeletonProps } from "./components/ui/skeleton/skeleton";
 
-export { Avatar, AvatarImage, AvatarFallback } from "./components/ui/avatar";
-export type { AvatarProps, AvatarImageProps, AvatarFallbackProps } from "./components/ui/avatar";
+export { Avatar, AvatarImage, AvatarFallback } from "./components/ui/avatar/avatar";
+export type {
+  AvatarProps,
+  AvatarImageProps,
+  AvatarFallbackProps,
+} from "./components/ui/avatar/avatar";
 
-export { Checkbox } from "./components/ui/checkbox";
-export type { CheckboxProps } from "./components/ui/checkbox";
+export { Checkbox } from "./components/ui/checkbox/checkbox";
+export type { CheckboxProps } from "./components/ui/checkbox/checkbox";
 
-export { Switch } from "./components/ui/switch";
-export type { SwitchProps } from "./components/ui/switch";
+export { Switch } from "./components/ui/switch/switch";
+export type { SwitchProps } from "./components/ui/switch/switch";
 
-export { RadioGroup, RadioGroupItem } from "./components/ui/radio-group";
-export type { RadioGroupProps, RadioGroupItemProps } from "./components/ui/radio-group";
+export { RadioGroup, RadioGroupItem } from "./components/ui/radio-group/radio-group";
+export type { RadioGroupProps, RadioGroupItemProps } from "./components/ui/radio-group/radio-group";
 
 export {
   Select,
@@ -59,7 +63,7 @@ export {
   SelectSeparator,
   SelectScrollUpButton,
   SelectScrollDownButton,
-} from "./components/ui/select";
+} from "./components/ui/select/select";
 export type {
   SelectProps,
   SelectTriggerProps,
@@ -68,7 +72,7 @@ export type {
   SelectLabelProps,
   SelectItemProps,
   SelectSeparatorProps,
-} from "./components/ui/select";
+} from "./components/ui/select/select";
 
 export {
   Dialog,
@@ -81,7 +85,7 @@ export {
   DialogFooter,
   DialogTitle,
   DialogDescription,
-} from "./components/ui/dialog";
+} from "./components/ui/dialog/dialog";
 export type {
   DialogProps,
   DialogTriggerProps,
@@ -92,20 +96,29 @@ export type {
   DialogFooterProps,
   DialogTitleProps,
   DialogDescriptionProps,
-} from "./components/ui/dialog";
+} from "./components/ui/dialog/dialog";
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "./components/ui/tooltip";
+export {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+} from "./components/ui/tooltip/tooltip";
 export type {
   TooltipProps,
   TooltipTriggerProps,
   TooltipContentProps,
-} from "./components/ui/tooltip";
+} from "./components/ui/tooltip/tooltip";
 
-export { Alert, AlertTitle, AlertDescription, alertVariants } from "./components/ui/alert";
-export type { AlertProps, AlertTitleProps, AlertDescriptionProps } from "./components/ui/alert";
+export { Alert, AlertTitle, AlertDescription, alertVariants } from "./components/ui/alert/alert";
+export type {
+  AlertProps,
+  AlertTitleProps,
+  AlertDescriptionProps,
+} from "./components/ui/alert/alert";
 
-export { Progress } from "./components/ui/progress";
-export type { ProgressProps } from "./components/ui/progress";
+export { Progress } from "./components/ui/progress/progress";
+export type { ProgressProps } from "./components/ui/progress/progress";
 
-export { Typography, typographyVariants } from "./components/ui/typography";
-export type { TypographyProps } from "./components/ui/typography";
+export { Typography, typographyVariants } from "./components/ui/typography/typography";
+export type { TypographyProps } from "./components/ui/typography/typography";
