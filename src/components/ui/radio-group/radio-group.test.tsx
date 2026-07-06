@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RadioGroup, RadioGroupItem } from "./radio-group";
-import { Label } from "./label";
+import { Label } from "@/components/ui/label/label";
 
 describe("RadioGroup", () => {
   function renderGroup(onValueChange?: (v: string) => void) {

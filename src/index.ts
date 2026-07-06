@@ -36,7 +36,7 @@ export type { SeparatorProps } from "./components/ui/separator/separator";
 export { Skeleton } from "./components/ui/skeleton/skeleton";
 export type { SkeletonProps } from "./components/ui/skeleton/skeleton";
 
-export { Avatar, AvatarImage, AvatarFallback } from "./components/ui/avatar/avatar";
+export { Avatar, AvatarImage, AvatarFallback, avatarVariants } from "./components/ui/avatar/avatar";
 export type {
   AvatarProps,
   AvatarImageProps,
@@ -122,3 +122,6 @@ export type { ProgressProps } from "./components/ui/progress/progress";
 
 export { Typography, typographyVariants } from "./components/ui/typography/typography";
 export type { TypographyProps } from "./components/ui/typography/typography";
+
+export { Logo } from "./components/ui/logo/logo";
+export type { LogoProps } from "./components/ui/logo/logo";

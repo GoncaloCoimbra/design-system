@@ -72,6 +72,20 @@
   --color-input: oklch(0.184 0.025 254); /* #111827 — slightly off card */
   --color-ring: var(--color-primary-500);
 
+  /* ── Background gradients ────────────────────────────────────────────────────── */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-900), var(--color-primary-700));
+  --gradient-secondary: linear-gradient(
+    135deg,
+    var(--color-secondary-900),
+    var(--color-secondary-700)
+  );
+  --gradient-brand: linear-gradient(135deg, var(--color-primary-900), var(--color-secondary-800));
+  --gradient-brand-vivid: linear-gradient(
+    135deg,
+    var(--color-primary-700),
+    var(--color-secondary-700)
+  );
+
   /* ── Radius ───────────────────────────────────────────────────── */
   --radius-sm: 0.375rem; /* 6px  */
   --radius-md: 0.625rem; /* 10px */

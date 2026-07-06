@@ -8,14 +8,18 @@ describe("Button", () => {
     expect(screen.getByRole("button", { name: "Click me" })).toBeInTheDocument();
   });
 
-  it("applies default variant classes", () => {
+  it("applies default variant gradient classes", () => {
     render(<Button>Default</Button>);
-    expect(screen.getByRole("button")).toHaveClass("bg-primary");
+    const btn = screen.getByRole("button");
+    expect(btn).toHaveClass("from-primary-500");
+    expect(btn).toHaveClass("to-primary-600");
   });
 
-  it("applies destructive variant classes", () => {
+  it("applies destructive variant gradient classes", () => {
     render(<Button variant="destructive">Destructive</Button>);
-    expect(screen.getByRole("button")).toHaveClass("bg-destructive");
+    const btn = screen.getByRole("button");
+    expect(btn).toHaveClass("from-red-500");
+    expect(btn).toHaveClass("to-red-600");
   });
 
   it("calls onClick when clicked", async () => {
@@ -42,7 +46,16 @@ describe("Button", () => {
         <a href="/test">Link</a>
       </Button>
     );
-    expect(screen.getByRole("link", { name: "Link" })).toBeInTheDocument();
-    expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    // asChild merges button props onto the anchor — no <button> in the DOM
+    const link = screen.getByRole("link", { name: "Link" });
+    expect(link).toBeInTheDocument();
+    expect(link.tagName).toBe("A");
+  });
+
+  it("shows a spinner and sets aria-busy when loading", () => {
+    render(<Button loading>Save</Button>);
+    const btn = screen.getByRole("button");
+    expect(btn).toHaveAttribute("aria-busy", "true");
+    expect(btn).toBeDisabled();
   });
 });

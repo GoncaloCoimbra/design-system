@@ -43,7 +43,7 @@ const ALL_VARIANTS = ["default", "secondary", "outline", "ghost", "destructive",
 // ─── Meta ─────────────────────────────────────────────────────────────────────
 
 const meta = {
-  title: "UI/Button",
+  title: "Base Components/Button",
   component: Button,
   parameters: {
     layout: "centered",

@@ -12,9 +12,9 @@ describe("Badge", () => {
     expect(screen.getByText("Default")).toHaveClass("text-primary");
   });
 
-  it("secondary variant has elevated background class", () => {
+  it("secondary variant has secondary tinted background class", () => {
     render(<Badge variant="secondary">Secondary</Badge>);
-    expect(screen.getByText("Secondary")).toHaveClass("bg-elevated");
+    expect(screen.getByText("Secondary")).toHaveClass("text-secondary");
   });
 
   it("destructive variant has destructive text class", () => {

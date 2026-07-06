@@ -14,6 +14,10 @@ export default defineConfig({
     options.alias = {
       "@": path.resolve(__dirname, "src"),
     };
+    options.loader = {
+      ...options.loader,
+      ".png": "dataurl",
+    };
   },
   tsconfig: "tsconfig.app.json",
 });

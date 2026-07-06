@@ -41,6 +41,11 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        order: ["Brand Identity", "Base Components", "UI"],
+      },
+    },
   },
 };
 
