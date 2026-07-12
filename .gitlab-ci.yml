@@ -61,18 +61,6 @@ build:
 #   npm run version     → bump package.json + update CHANGELOG.md
 #   git commit -am "chore: release vX.Y.Z" && git push
 
-chromatic:
-  stage: release
-  script:
-    - npm run chromatic
-  variables:
-    CHROMATIC_PROJECT_TOKEN: $CHROMATIC_PROJECT_TOKEN
-  rules:
-    - if: $CI_COMMIT_BRANCH == "main"
-      when: manual
-  environment:
-    name: chromatic
-
 release:
   stage: release
   script:
