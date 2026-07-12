@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 @import "tailwindcss";
 
 @font-face {
@@ -69,6 +69,7 @@
 
   /* ── Border, Input, Ring ──────────────────────────────────────── */
   --color-border: oklch(0.307 0.03 254); /* #2B3648 */
+  --color-border-hover: #2e3f5a; /* used on hoverable card/panel borders */
   --color-input: oklch(0.184 0.025 254); /* #111827 — slightly off card */
   --color-ring: var(--color-primary-500);
 

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+﻿import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta = {
   title: "Brand Identity/Radius",
@@ -7,10 +7,10 @@ const meta: Meta = {
 export default meta;
 
 const radiiTokens = [
-  { name: "sm", variable: "--radius-sm", description: "0.25rem" },
-  { name: "md", variable: "--radius-md", description: "0.375rem" },
-  { name: "lg", variable: "--radius-lg", description: "0.5rem" },
-  { name: "xl", variable: "--radius-xl", description: "0.75rem" },
+  { name: "sm", variable: "--radius-sm", description: "0.375rem / 6px" },
+  { name: "md", variable: "--radius-md", description: "0.625rem / 10px" },
+  { name: "lg", variable: "--radius-lg", description: "0.875rem / 14px" },
+  { name: "xl", variable: "--radius-xl", description: "1rem / 16px" },
 ];
 
 function RadiiPage() {
