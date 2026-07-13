@@ -117,7 +117,7 @@ export type TypographyProps = React.HTMLAttributes<HTMLElement> &
  * typographic scale — headings, body, utility text, and inline elements —
  * and handles semantic HTML element selection automatically.
  *
- * @see {@link https://main--6a47d6ac8a9990bb6908d4a9.chromatic.com/?path=/docs/ui-typography--docs Storybook documentation}
+ * @see {@link https://storybook.commitpt.com/?path=/docs/ui-typography--docs Storybook documentation}
  *
  * ---
  *

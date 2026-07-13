@@ -43,6 +43,12 @@ export type {
   AvatarFallbackProps,
 } from "./components/ui/avatar/avatar";
 
+export { ReviewCard, reviewCardVariants } from "./components/ui/review-card/review-card";
+export type { ReviewCardProps } from "./components/ui/review-card/review-card";
+
+export { FeatureCard, featureCardVariants } from "./components/ui/feature-card/feature-card";
+export type { FeatureCardProps } from "./components/ui/feature-card/feature-card";
+
 export { Checkbox } from "./components/ui/checkbox/checkbox";
 export type { CheckboxProps } from "./components/ui/checkbox/checkbox";
 
