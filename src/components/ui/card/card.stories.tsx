@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { Clock, Code2, Users2 } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -40,86 +41,26 @@ export const Default: Story = {
   ),
 };
 
-const ClockIcon = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={1.8}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M4 12h5" />
-    <path d="M15 12h5" />
-    <circle cx="12" cy="12" r="4" />
-    <circle className="card-icon-dot" cx="12" cy="12" r="1.8" fill="currentColor" stroke="none" />
-  </svg>
-);
-
-const ReviewIcon = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={1.8}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M4 8h9" />
-    <path d="M4 8v10a2 2 0 002 2h10a2 2 0 002-2V8" />
-    <path d="M4 8L9 3h6l5 5" />
-    <path stroke="#22C55E" d="M8 14h8" />
-    <path stroke="#22C55E" d="M8 17.5h5" />
-    <circle
-      className="card-icon-dot"
-      cx="17.2"
-      cy="6.6"
-      r="1.4"
-      fill="currentColor"
-      stroke="none"
-    />
-  </svg>
-);
-
-const TeamIcon = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={1.8}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M6 3v11" />
-    <path d="M6 14a3 3 0 003 3h3" />
-    <circle cx="6" cy="19" r="2.2" />
-    <circle cx="6" cy="6" r="2.2" />
-    <circle cx="15" cy="19" r="2.2" />
-    <path d="M15 16.5v-9" />
-    <circle className="card-icon-dot" cx="15" cy="7" r="1.4" fill="currentColor" stroke="none" />
-  </svg>
-);
-
 export const IconFeatureHorizontal: Story = {
   render: () => (
     <div className="flex gap-4 bg-background p-6">
       <CardIconFeature
         className="flex-1 text-blue-400"
-        icon={<ClockIcon />}
+        icon={<Clock className="h-5 w-5" />}
         title="Sessões Semanais ao Vivo"
         description="Chamadas regulares onde apresentas o que estás a construir e recebes feedback em tempo real."
         category="Ao Vivo"
       />
       <CardIconFeature
         className="flex-1 text-blue-400"
-        icon={<ReviewIcon />}
+        icon={<Code2 className="h-5 w-5" />}
         title="Revisões de código de quem já ships"
         description="Submetes o teu trabalho e recebes análise específica de profissionais com experiência real."
         category="Code Review"
       />
       <CardIconFeature
         className="flex-1 text-blue-400"
-        icon={<TeamIcon />}
+        icon={<Users2 className="h-5 w-5" />}
         title="Projetos com gente a depender de ti"
         description="Deadlines, dependências, standup que cobra. O ambiente mais próximo de uma equipa real."
         category="Colaborativo"
