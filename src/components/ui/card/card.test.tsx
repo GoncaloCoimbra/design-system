@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./card";
 
 describe("Card", () => {
   it("renders Card with all sub-components and content is visible", () => {

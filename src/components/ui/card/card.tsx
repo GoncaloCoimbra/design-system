@@ -8,6 +8,57 @@ export interface CardDescriptionProps extends React.HTMLAttributes<HTMLParagraph
 export interface CardContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 export interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
 
+/**
+ * Família de componentes de cartão do Commit Design System. Inclui o container
+ * base e os sub-componentes de layout: `CardHeader`, `CardTitle`,
+ * `CardDescription`, `CardContent` e `CardFooter`.
+ *
+ * @see {@link https://storybook.commitpt.com/?path=/docs/ui-card--docs Storybook documentation}
+ *
+ * ---
+ *
+ * ## Escala tipográfica
+ *
+ * | Classe                                          | Tamanho | Onde é usado                    |
+ * |-------------------------------------------------|---------|---------------------------------|
+ * | `h6` — `text-base font-semibold tracking-tight` | 16px    | `CardTitle`, título `CardIconFeature` |
+ * | `muted` — `text-sm leading-5`                   | 14px    | `CardDescription`, descrição    |
+ *
+ * ---
+ *
+ * ## Bordas
+ *
+ * | Token           | Onde é usado  |
+ * |-----------------|---------------|
+ * | `border-border` | `Card` base   |
+ *
+ * ---
+ *
+ * ## Espaçamento
+ *
+ * | Token    | Valor | Uso típico                                           |
+ * |----------|-------|------------------------------------------------------|
+ * | `p-6`    | 24px  | padding de `CardHeader`, `CardContent`, `CardFooter` |
+ * | `mb-2.5` | 10px  | espaço entre título e descrição                      |
+ *
+ * ---
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * <Card>
+ *   <CardHeader>
+ *     <CardTitle>Título</CardTitle>
+ *     <CardDescription>Descrição</CardDescription>
+ *   </CardHeader>
+ *   <CardContent>Conteúdo</CardContent>
+ *   <CardFooter>
+ *     <Button variant="outline" size="sm">Cancelar</Button>
+ *     <Button size="sm">Guardar</Button>
+ *   </CardFooter>
+ * </Card>
+ * ```
+ */
 const Card = React.forwardRef<HTMLDivElement, CardProps>(({ className, ...props }, ref) => (
   <div
     ref={ref}

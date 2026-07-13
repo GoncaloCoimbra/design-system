@@ -22,7 +22,7 @@ export type LogoProps = Omit<React.ComponentProps<"img">, "src" | "width" | "hei
  * Renders the commitpt brand mark — the `commit_icon.png` asset — as a square
  * image with a configurable size and border radius.
  *
- * @see {@link https://main--6a47d6ac8a9990bb6908d4a9.chromatic.com/?path=/docs/ui-logo--docs Storybook documentation}
+ * @see {@link https://storybook.commitpt.com/?path=/docs/ui-logo--docs Storybook documentation}
  *
  * ---
  *

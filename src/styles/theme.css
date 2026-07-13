@@ -69,8 +69,32 @@
 
   /* ── Border, Input, Ring ──────────────────────────────────────── */
   --color-border: oklch(0.307 0.03 254); /* #2B3648 */
+  --color-border-hover: #2e3f5a; /* used on hoverable card/panel borders */
   --color-input: oklch(0.184 0.025 254); /* #111827 — slightly off card */
   --color-ring: var(--color-primary-500);
+
+  /* ── Gradient borders ─────────────────────────────────────────── *
+   * Use with the padding-box / border-box background technique:
+   *   background:
+   *     <inner-bg> padding-box,
+   *     var(--border-gradient-*) border-box;
+   *   border: 1px solid transparent;
+   */
+  --border-gradient-brand: linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--color-primary-400) 12%, transparent),
+    color-mix(in oklch, var(--color-secondary-400) 12%, transparent)
+  ); /* subtle cross-brand — ReviewCard, highlighted panels */
+  --border-gradient-primary: linear-gradient(
+    135deg,
+    var(--color-primary-400),
+    var(--color-primary-700)
+  ); /* solid primary — focus rings, active states */
+  --border-gradient-secondary: linear-gradient(
+    135deg,
+    var(--color-secondary-400),
+    var(--color-secondary-700)
+  ); /* solid secondary — premium badges, special cards */
 
   /* ── Background gradients ────────────────────────────────────────────────────── */
   --gradient-primary: linear-gradient(135deg, var(--color-primary-900), var(--color-primary-700));
@@ -99,6 +123,18 @@
   --font-mono:
     "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
+
+  /* ── Icons ────────────────────────────────────────────────────── *
+   * Scale for lucide-react icons across the design system. `--icon-md`
+   * is the default (unsuffixed `.icon` class) and matches the size
+   * icons have historically shipped at inside components like Card.
+   */
+  --icon-xxs: 0.75rem; /* 12px — micro contexts: badges, chips, dense tags */
+  --icon-xs: 1rem; /* 16px — inline with text-xs/text-sm, dense lists */
+  --icon-sm: 1.25rem; /* 20px — inline with text-base, form fields, inputs */
+  --icon-md: 1.5rem; /* 24px — default. Feature cards, standalone icons */
+  --icon-lg: 2rem; /* 32px — section headers, empty states */
+  --icon-xl: 2.5rem; /* 40px — hero/marketing illustrations */
 }
 
 @layer base {
@@ -119,5 +155,46 @@
   pre,
   samp {
     font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  /* ── Icon size utilities ──────────────────────────────────────── *
+   * `.icon` is the default (24px) — same call site as before, but
+   * driven by a token instead of a hardcoded h-6 w-6. Use the
+   * suffixed variants when a component needs a different scale.
+   * These set both dimensions and prevent flex/grid children from
+   * being squashed.
+   */
+  .icon-xxs {
+    width: var(--icon-xxs);
+    height: var(--icon-xxs);
+    flex-shrink: 0;
+  }
+  .icon-xs {
+    width: var(--icon-xs);
+    height: var(--icon-xs);
+    flex-shrink: 0;
+  }
+  .icon-sm {
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+    flex-shrink: 0;
+  }
+  .icon,
+  .icon-md {
+    width: var(--icon-md);
+    height: var(--icon-md);
+    flex-shrink: 0;
+  }
+  .icon-lg {
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+    flex-shrink: 0;
+  }
+  .icon-xl {
+    width: var(--icon-xl);
+    height: var(--icon-xl);
+    flex-shrink: 0;
   }
 }

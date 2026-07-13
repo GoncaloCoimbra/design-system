@@ -83,7 +83,7 @@ export type ButtonProps = React.ComponentProps<"button"> &
  * Renders a semantic `<button>` by default, with full support for icon composition,
  * async loading states, and rendering as any element via `asChild`.
  *
- * @see {@link https://main--6a47d6ac8a9990bb6908d4a9.chromatic.com/?path=/docs/ui-button--docs Storybook documentation}
+ * @see {@link https://storybook.commitpt.com/?path=/docs/ui-button--docs Storybook documentation}
  *
  * ---
  *
