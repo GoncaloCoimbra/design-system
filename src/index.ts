@@ -131,3 +131,6 @@ export type { TypographyProps } from "./components/ui/typography/typography";
 
 export { Logo } from "./components/ui/logo/logo";
 export type { LogoProps } from "./components/ui/logo/logo";
+
+export { ExpandableText } from "./components/ui/expandable-text/expandable-text";
+export type { ExpandableTextProps } from "./components/ui/expandable-text/expandable-text";
