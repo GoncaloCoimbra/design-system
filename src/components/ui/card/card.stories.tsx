@@ -123,3 +123,35 @@ export const V2Editorial: Story = {
     </div>
   ),
 };
+
+export const TruncatedDescription: Story = {
+  render: () => (
+    <Card className="w-[350px]">
+      <CardHeader>
+        <CardTitle>Card com texto longo</CardTitle>
+        <CardDescription truncate maxLines={7}>
+          Esta é uma descrição propositadamente longa para testar o comportamento de truncagem. Deve
+          mostrar no máximo sete linhas de texto e depois apresentar a opção "ler mais" a azul, com
+          sublinhado no hover e cursor pointer. Ao clicar, o texto completo deve aparecer e o botão
+          deve mudar para "ler menos", permitindo voltar ao estado truncado. Este parágrafo tem de
+          ser suficientemente extenso para garantir que ultrapassa as sete linhas dentro de um card
+          com 350px de largura, para validar corretamente o comportamento do ResizeObserver e da
+          medição de altura real do texto no DOM.
+        </CardDescription>
+      </CardHeader>
+    </Card>
+  ),
+};
+
+export const ShortDescriptionNoTruncate: Story = {
+  render: () => (
+    <Card className="w-[350px]">
+      <CardHeader>
+        <CardTitle>Card com texto curto</CardTitle>
+        <CardDescription truncate maxLines={7}>
+          Texto curto que não deve mostrar o botão "ler mais".
+        </CardDescription>
+      </CardHeader>
+    </Card>
+  ),
+};

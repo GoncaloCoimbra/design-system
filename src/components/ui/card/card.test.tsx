@@ -95,3 +95,29 @@ describe("CardNumberedRow", () => {
     expect(screen.getByText("Code Review")).toBeInTheDocument();
   });
 });
+
+describe("CardDescription truncate", () => {
+  it("does not show toggle for short text", () => {
+    render(
+      <CardDescription truncate maxLines={7}>
+        Texto curto.
+      </CardDescription>
+    );
+    expect(screen.queryByText("ler mais")).not.toBeInTheDocument();
+  });
+
+  it("renders plain text when truncate is not set", () => {
+    render(<CardDescription>Descrição normal</CardDescription>);
+    expect(screen.getByText("Descrição normal")).toBeInTheDocument();
+    expect(screen.queryByText("ler mais")).not.toBeInTheDocument();
+  });
+
+  it("renders the text content when truncate is set", () => {
+    render(
+      <CardDescription truncate maxLines={7}>
+        Texto de exemplo truncável.
+      </CardDescription>
+    );
+    expect(screen.getByText("Texto de exemplo truncável.")).toBeInTheDocument();
+  });
+});

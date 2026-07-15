@@ -1,10 +1,15 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { ExpandableText } from "@/components/ui/expandable-text/expandable-text";
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
 export interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
 export interface CardTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {}
-export interface CardDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+export interface CardDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {
+  /** Se definido, o texto passa a truncar em `maxLines` com toggle "ler mais". */
+  truncate?: boolean;
+  maxLines?: number;
+}
 export interface CardContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 export interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -85,6 +90,13 @@ export interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
  * </Card>
  * ```
  *
+ * ### Card com descrição truncada (issue #5)
+ * ```tsx
+ * <CardDescription truncate maxLines={7}>
+ *   {textoLongo}
+ * </CardDescription>
+ * ```
+ *
  * ### Feature card com ícone (layout horizontal)
  * ```tsx
  * <CardIconFeature
@@ -146,9 +158,24 @@ const CardTitle = React.forwardRef<HTMLHeadingElement, CardTitleProps>(
 CardTitle.displayName = "CardTitle";
 
 const CardDescription = React.forwardRef<HTMLParagraphElement, CardDescriptionProps>(
-  ({ className, ...props }, ref) => (
-    <p ref={ref} className={cn("text-sm text-muted-foreground", className)} {...props} />
-  )
+  ({ className, truncate, maxLines = 7, children, ...props }, ref) => {
+    if (truncate && typeof children === "string") {
+      return (
+        <ExpandableText
+          ref={ref}
+          text={children}
+          maxLines={maxLines}
+          className={className}
+          {...props}
+        />
+      );
+    }
+    return (
+      <p ref={ref} className={cn("text-sm text-muted-foreground", className)} {...props}>
+        {children}
+      </p>
+    );
+  }
 );
 CardDescription.displayName = "CardDescription";
 

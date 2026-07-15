@@ -13,6 +13,8 @@ export type { TextareaProps } from "./components/ui/textarea/textarea";
 export { Badge, badgeVariants } from "./components/ui/badge/badge";
 export type { BadgeProps } from "./components/ui/badge/badge";
 
+export { ExpandableText } from "./components/ui/expandable-text/expandable-text";
+export type { ExpandableTextProps } from "./components/ui/expandable-text/expandable-text";
 export {
   Card,
   CardHeader,
