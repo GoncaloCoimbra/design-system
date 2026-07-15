@@ -2,13 +2,13 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
-import { cn } from "@/lib/utils";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip/tooltip";
+import { cn } from "@/lib/utils";
 
 // ─── Variants ─────────────────────────────────────────────────────────────────
 
@@ -18,9 +18,9 @@ const avatarVariants = cva("relative flex shrink-0 overflow-hidden rounded-full"
       default: [],
       primary: [
         // gradient shows through as an inset border via padding
-        "p-[2px] bg-gradient-to-b from-primary-500 to-primary-600",
+        "p-px bg-linear-to-b from-primary-300 to-primary-400",
       ],
-      secondary: ["p-[2px] bg-gradient-to-b from-secondary-500 to-secondary-600"],
+      secondary: ["p-px bg-linear-to-b from-secondary-300 to-secondary-400"],
     },
     size: {
       sm: "size-7 text-[10px]",
@@ -86,7 +86,7 @@ AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
  * border variant (primary / secondary brand colours), and hover tooltip.
  * Built on top of `@radix-ui/react-avatar` and the design system's Tooltip.
  *
- * @see {@link https://main--6a47d6ac8a9990bb6908d4a9.chromatic.com/?path=/docs/ui-avatar--docs Storybook documentation}
+ * @see {@link https://storybook.commitpt.com/?path=/docs/ui-avatar--docs Storybook documentation}
  *
  * ---
  *
@@ -203,4 +203,4 @@ const Avatar = React.forwardRef<React.ElementRef<typeof AvatarPrimitive.Root>, A
 );
 Avatar.displayName = AvatarPrimitive.Root.displayName;
 
-export { Avatar, AvatarImage, AvatarFallback, avatarVariants };
+export { Avatar, AvatarFallback, AvatarImage, avatarVariants };

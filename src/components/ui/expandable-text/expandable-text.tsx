@@ -35,18 +35,24 @@ const ExpandableText = React.forwardRef<HTMLParagraphElement, ExpandableTextProp
       if (!el) return;
 
       const checkTruncation = () => {
-        const wasExpanded = expanded;
-        if (wasExpanded) return; // não remedir enquanto expandido
-        setIsTruncatable(el.scrollHeight > el.clientHeight + 1);
+        if (expanded) return;
+        const next = el.scrollHeight > el.clientHeight + 1;
+        setIsTruncatable((prev) => (prev === next ? prev : next));
       };
 
-      checkTruncation();
+      const raf = requestAnimationFrame(checkTruncation);
 
-      if (typeof ResizeObserver === "undefined") return;
+      if (typeof ResizeObserver === "undefined") {
+        return () => cancelAnimationFrame(raf);
+      }
 
       const observer = new ResizeObserver(checkTruncation);
       observer.observe(el);
-      return () => observer.disconnect();
+
+      return () => {
+        cancelAnimationFrame(raf);
+        observer.disconnect();
+      };
     }, [text, maxLines, expanded]);
 
     return (
